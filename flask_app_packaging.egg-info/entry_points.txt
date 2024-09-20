@@ -1,0 +1,2 @@
+[console_scripts]
+flaskapp = app.main:app

@@ -1,0 +1,21 @@
+# pyproject.toml
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flask-app-packaging"
+version = "0.1.0"
+description = "A Flask web app packaging"
+readme = "README.md"
+authors = [
+    { name="Pralay Das", email="pralay@example.com" }
+]
+license = { text="MIT" }
+dependencies = [
+    "flask",
+    "waitress"
+]
+
+[project.scripts]
+flaskapp = "app.main:app"

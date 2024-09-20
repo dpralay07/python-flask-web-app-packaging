@@ -1,0 +1,97 @@
+Metadata-Version: 2.1
+Name: flask-app-packaging
+Version: 0.1.0
+Summary: A Flask web app packaging
+Author-email: Pralay Das <pralay@example.com>
+License: MIT
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: flask
+Requires-Dist: waitress
+
+# Flask Web App Packaging
+
+* Flask API
+* Waitress
+
+This project is a Flask-based web application packaged for production and served with Waitress.
+
+## File Structure
+- `app/`: Directory containing the Flask application code.
+  - `__init__.py`: Initializes the Flask app
+  - `main.py`: App init file
+- `pyproject.toml`: Configuration file
+- `README.md`: Project details.
+- `MANIFEST.in`: Track additional files
+
+## Features
+
+- **Packaging**: Perform packaging of the application and generate a build file (.whl)
+- **Waitress**: Serve the web application using the build file
+
+## Prerequisites
+
+- Python >=3.10.7
+
+## Build the project
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/dpralay07/python-flask-web-app-packaging.git
+cd python-flask-web-app-packaging
+```
+
+### Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+### Build
+```bash
+python -m build
+```
+This will build the application and generate a build file (.whl) in dist/ directory.
+
+### Access the application
+Access the Application
+The Flask API will be available at `http://<your_ip_address>:80`
+
+### Stopping the Application
+To stop and remove the containers, run:
+```bash
+docker-compose down
+```
+
+## API Endpoints
+
+    POST /register: Register a new user. Requires username and password in the request body.
+    POST /login: Authenticate a user and receive a JWT token. Requires username and password in the request body.
+    GET /protected: Access protected content. Requires a valid JWT token in the Authorization header.
+
+## Testing
+We can test the API endpoints using tools like Postman or cURL.
+Example cURL Commands
+
+Register a User:
+```bash
+curl -X POST http://<your_ip_address>:80/register -H "Content-Type: application/json" -d '{"username": "testuser", "password": "password123"}'
+```
+Login and Get Access Token:
+```bash
+curl -X POST http://<your_ip_address>:80/login -H "Content-Type: application/json" -d '{"username": "testuser", "password": "password123"}'
+```
+Access Protected Endpoint:
+Replace your_jwt_token with the token received from login.
+```bash
+curl -X GET http://<your_ip_address>:80/protected -H "Authorization: Bearer your_jwt_token"
+```
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contributing
+Contributions are welcome! Please open an issue or submit a pull request to improve this project.
+
+## Contact
+For any questions or feedback, please contact [pralaykumar.daz@gmail.com](mailto:pralaykumar.daz@gmail.com).

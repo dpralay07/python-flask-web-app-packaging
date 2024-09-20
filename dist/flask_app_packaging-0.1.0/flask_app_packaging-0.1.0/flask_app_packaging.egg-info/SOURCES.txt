@@ -1,0 +1,13 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+app/__init__.py
+app/main.py
+app/templates/index.html
+flask_app_packaging.egg-info/PKG-INFO
+flask_app_packaging.egg-info/SOURCES.txt
+flask_app_packaging.egg-info/dependency_links.txt
+flask_app_packaging.egg-info/entry_points.txt
+flask_app_packaging.egg-info/requires.txt
+flask_app_packaging.egg-info/top_level.txt
