@@ -1,0 +1,5 @@
+# Set Python files
+*.py linguist-language=Python
+
+# You can also ignore certain files if needed
+*.txt linguist-hidden=true
